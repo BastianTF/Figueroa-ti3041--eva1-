@@ -1,0 +1,21 @@
+{% extends "catalogo/base.html" %}
+{% block titulo %}Catálogo{% endblock %}
+{% block contenido %}
+    <h1>Catálogo de productos</h1>
+    <table>
+        <thead>
+            <tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th></th></tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.categoria }}</td>
+                <td>${{ producto.precio }}</td>
+                <td>{{ producto.stock }}</td>
+                <td><a href="{% url 'catalogo:detalle' producto.id %}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

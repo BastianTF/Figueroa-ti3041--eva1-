@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Ferretería El Tornillo{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h2><a href="{% url 'catalogo:lista' %}">🔧 Ferretería El Tornillo</a></h2>
+    </header>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+</body>
+</html>
