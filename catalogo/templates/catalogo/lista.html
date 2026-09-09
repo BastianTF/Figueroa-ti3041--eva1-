@@ -2,17 +2,30 @@
 {% block titulo %}Catálogo{% endblock %}
 {% block contenido %}
     <h1>Catálogo de productos</h1>
+
+    <p>
+        Total: {{ total_productos }} ·
+        Con stock: {{ total_con_stock }} ·
+        Sin stock: {{ total_sin_stock }}
+    </p>
+
     <table>
         <thead>
             <tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th></th></tr>
         </thead>
         <tbody>
             {% for producto in productos %}
-            <tr>
+            <tr class="{% if producto.stock == 0 %}fila--sin-stock{% endif %}">
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.categoria }}</td>
                 <td>${{ producto.precio }}</td>
-                <td>{{ producto.stock }}</td>
+                <td>
+                    {% if producto.stock == 0 %}
+                        <strong style="color:red;">Sin stock</strong>
+                    {% else %}
+                        {{ producto.stock }} un.
+                    {% endif %}
+                </td>
                 <td><a href="{% url 'catalogo:detalle' producto.id %}">Ver</a></td>
             </tr>
             {% endfor %}
