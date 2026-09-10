@@ -1,7 +1,7 @@
 # Uso de IA y entrega final
 
 ## Proyecto
-Ferretería El Tornillo
+Ferretería del Ranco
 
 ## Objetivo
 Desarrollar una pequeña aplicación web con Django para mostrar un catálogo de productos, con listado, detalle, resumen de stock y una interfaz visual simple.
