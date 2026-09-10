@@ -31,7 +31,12 @@ Puedes explicarme como separar los roles de cliente y administrador al momento d
 - Para separar los roles de Cliente y Administrador aprovechando que estás trabajando con datos estáticos en la vista, la forma más limpia y eficiente en Django es utilizar los atributos nativos del usuario (user.is_staff) o los Grupos de Django, controlando los topes mediante condicionales en el código Python.
   
 ## Consulta 3
-
+corrigeme el error del inicio de sesion
+- falla en el redireccionamiento (que te envíe a una URL por defecto como /accounts/profile/ que no existe) o la falta del token CSRF en el formulario de envío.
+- 
+# Agregar obligatoriamente al final de config/settings.py
+LOGIN_REDIRECT_URL = 'redireccionar_home'  # Ruta intermedia de roles
+LOGOUT_REDIRECT_URL = 'lista_productos'   # Volver al catálogo al salir
 
 ## Cómo ejecutar el proyecto
 1. Abrir PowerShell en la raíz del proyecto.
