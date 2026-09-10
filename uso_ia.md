@@ -33,7 +33,7 @@ Puedes explicarme como separar los roles de cliente y administrador al momento d
 ## Consulta 3
 corrigeme el error del inicio de sesion
 - falla en el redireccionamiento (que te envíe a una URL por defecto como /accounts/profile/ que no existe) o la falta del token CSRF en el formulario de envío.
-- 
+ 
 # Agregar obligatoriamente al final de config/settings.py
 LOGIN_REDIRECT_URL = 'redireccionar_home'  # Ruta intermedia de roles
 LOGOUT_REDIRECT_URL = 'lista_productos'   # Volver al catálogo al salir
